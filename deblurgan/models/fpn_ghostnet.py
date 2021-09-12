@@ -6,6 +6,49 @@ import numpy as np
 import cv2
 
 
+class HINet(nn.Module):
+
+    def __init__(self, in_ch):
+
+        super(HINet, self).__init__()
+        self.instance_norm= nn.InstanceNorm2d(in_ch -in_ch//2, affine= True)
+
+    def forward(self, x):
+
+        channels= x.shape[1]
+        channels_i= channels -channels//2
+        x_i= x[:,:channels_i,:,:]
+        x_r= x[:,channels_i:,:,:]
+        x_i= self.instance_norm(x_i)
+
+        return torch.cat([x_i, x_r], dim=1)
+
+
+class GhostModule(nn.Module):
+    """class that replaces Conv2D layers"""
+    def __init__(self, inp, oup, kernel_size=1, ratio=2, dw_size=3, stride=1, relu=True,  bias= False):
+        super(GhostModule, self).__init__()
+        self.oup = oup
+        init_channels = math.ceil(oup / ratio)
+        new_channels = init_channels*(ratio-1)
+
+        self.primary_conv = nn.Sequential(
+            nn.Conv2d(inp, init_channels, kernel_size, stride, kernel_size//2, bias=bias),
+            
+        )
+
+        self.cheap_operation = nn.Sequential(
+            nn.Conv2d(init_channels, new_channels, dw_size, 1, dw_size//2, groups=init_channels, bias=bias),
+            
+        )
+
+    def forward(self, x):
+        
+        x1 = self.primary_conv(x)
+        x2 = self.cheap_operation(x1)
+        out = torch.cat([x1,x2], dim=1)
+        return out[:,:self.oup,:,:]
+
 
 
 class FPNHead(nn.Module):
@@ -14,18 +57,20 @@ class FPNHead(nn.Module):
     def __init__(self, num_in, num_mid, num_out):
         super(FPNHead, self).__init__()
 
-        self.block0 = nn.Conv2d(num_in, num_mid, kernel_size= 3,padding=1, bias= False)
-        self.block1 = nn.Conv2d(num_mid, num_out, kernel_size= 3,padding=1,  bias= False)
+        self.block0 = GhostModule(num_in, num_mid, kernel_size=3, bias= False) 
+        self.block1 = GhostModule(num_mid, num_out, kernel_size=3, bias= False)
 
     def forward(self, x):
         x = nn.functional.relu(self.block0(x), inplace=True)
         x = nn.functional.relu(self.block1(x), inplace=True)
         return x
 
-class FPNGhostNetv4C(nn.Module):
+class FPNGhostNet(nn.Module):
 
     def __init__(self, norm_layer, output_ch=3, num_filters= 64, num_filters_fpn= 128, pretrained=True):
-        super(FPNGhostNetv4C, self).__init__()
+        super(FPNGhostNet, self).__init__()
+        
+
         self.fpn = FPN(num_filters=num_filters_fpn, norm_layer=norm_layer, pretrained=pretrained)
 
         # The segmentation heads on top of the FPN
@@ -36,19 +81,19 @@ class FPNGhostNetv4C(nn.Module):
         self.head4 = FPNHead(num_filters_fpn, num_filters, num_filters)
 
         self.smooth = nn.Sequential(
-            nn.Conv2d(4*num_filters, num_filters,padding=1, kernel_size=3),
+            GhostModule(4*num_filters, num_filters, kernel_size=3, bias= True),
             norm_layer(num_filters),
             nn.ReLU(),
         )
 
         self.smooth2 = nn.Sequential(
-            nn.Conv2d(num_filters, num_filters //2,padding=1, kernel_size= 3),
+            GhostModule(num_filters, num_filters//2, kernel_size=3, bias= True),
             norm_layer(num_filters // 2),
             nn.ReLU(),
         )
         
 
-        self.final =  nn.Conv2d(num_filters // 2, output_ch,padding=1, kernel_size= 3)
+        self.final =  GhostModule(num_filters//2, output_ch, kernel_size=3, bias= True)
 
     def unfreeze(self):
         self.fpn.unfreeze()
@@ -64,11 +109,10 @@ class FPNGhostNetv4C(nn.Module):
 
 
 
-       
+        
 
         smoothed = self.smooth(torch.cat([map4, map3, map2, map1], dim=1))
         smoothed = nn.functional.interpolate(smoothed, scale_factor=2, mode="nearest")
-        
         smoothed = self.smooth2(smoothed + map0)
         smoothed = nn.functional.interpolate(smoothed, scale_factor=2, mode="nearest") 
 
@@ -97,22 +141,22 @@ class FPN(nn.Module):
         self.enc3 = nn.Sequential(self.features.blocks_4, self.features.blocks_5)
         self.enc4 = nn.Sequential(self.features.blocks_6, self.features.blocks_7)
 
-        self.td1 = nn.Sequential( nn.Conv2d(num_filters, num_filters, kernel_size= 3,padding=1, bias= True),
+        self.td1 = nn.Sequential( GhostModule(num_filters, num_filters, kernel_size=3, bias= True),
                                  norm_layer(num_filters),
                                  nn.ReLU(inplace=True))
-        self.td2 = nn.Sequential(nn.Conv2d(num_filters, num_filters, kernel_size= 3, padding=1,bias= True),
+        self.td2 = nn.Sequential(GhostModule(num_filters, num_filters, kernel_size=3, bias= True),
                                  norm_layer(num_filters),
                                  nn.ReLU(inplace=True))
-        self.td3 = nn.Sequential(nn.Conv2d(num_filters, num_filters, kernel_size= 3, padding=1,bias= True),
+        self.td3 = nn.Sequential(GhostModule(num_filters, num_filters, kernel_size=3, bias= True),
                                  norm_layer(num_filters),
                                  nn.ReLU(inplace=True))
         self.pad = nn.ReflectionPad2d(1)
 
         self.lateral4 = nn.Conv2d(160, num_filters, kernel_size=1, bias=False) 
         self.lateral3 = nn.Conv2d(80, num_filters, kernel_size=1, bias=False) 
-        self.lateral2 = nn.Conv2d(40, num_filters, kernel_size=1, bias=False)
+        self.lateral2 = nn.Conv2d(40, num_filters, kernel_size=1, bias=False) 
         self.lateral1 = nn.Conv2d(24, num_filters, kernel_size=1, bias=False) 
-        self.lateral0 = nn.Conv2d(16, num_filters // 2, kernel_size=1, bias=False) 
+        self.lateral0 = nn.Conv2d(16, num_filters // 2, kernel_size=1, bias=False)
 
         for param in self.features.parameters():
             param.requires_grad = False
@@ -123,7 +167,7 @@ class FPN(nn.Module):
 
     def forward(self, x):
 
-        # Bottom-up pathway, from ResNet
+        
         
         enc0 = self.enc0(x)
 
@@ -134,7 +178,6 @@ class FPN(nn.Module):
         enc3 = self.enc3(enc2)  
 
         enc4 = self.enc4(enc3)  
-        
 
 
         # Lateral connections
@@ -160,8 +203,7 @@ class FPN(nn.Module):
 if __name__== "__main__":
 
     from torchstat import stat
-    model= FPNGhostNetv4C(nn.BatchNorm2d)
-
+    model= FPNGhostNet(nn.BatchNorm2d)
     stat(model, (3, 736, 1312))
 
 

@@ -8,8 +8,9 @@ from models.fpn_mobilenet import FPNMobileNet
 
 #############################################
 from models.fpn_mobilenet_v3 import FPNMobileNetv3
-from models.fpn_ghostnet_v4 import FPNGhostNetv4, HINet
-from models.fpn_ghostnet_v4_clear import FPNGhostNetv4C
+from models.fpn_ghostnet import FPNGhostNet, HINet
+from models.fpn_ghostnet_clear import FPNGhostNetC
+from models.fpn_ghostnent_all import FPNGhostNetA
 #############################################
 
 ###############################################################################
@@ -281,9 +282,11 @@ def get_generator(model_config, cuda= True):
     elif generator_name == 'fpn_mobilenet_v3':
         model_g = FPNMobileNetv3(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
     elif generator_name == 'fpn_ghostnet_gm_hin':
-        model_g= FPNGhostNetv4(norm_layer=get_norm_layer(norm_type=model_config['norm_layer'], affine= True))
-    elif generator_name == 'fpn_ghostnet':
-        model_g = FPNGhostNetv4C(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
+        model_g= FPNGhostNet(norm_layer=get_norm_layer(norm_type=model_config['norm_layer'], affine= True))
+    elif generator_name == 'fpn_ghostnet_clear':
+        model_g = FPNGhostNetC(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
+    elif generator_name == 'fpn_ghostnet_all':
+        model_g = FPNGhostNetA(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
     else:
         raise ValueError("Generator Network [%s] not recognized." % generator_name)
 

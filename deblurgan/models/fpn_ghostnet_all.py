@@ -49,10 +49,10 @@ class FPNHead(nn.Module):
         x = nn.functional.relu(self.block1(x), inplace=True)
         return x
 
-class FPNGhostNetv4(nn.Module):
+class FPNGhostNetA(nn.Module):
 
     def __init__(self, norm_layer, output_ch=3, num_filters= 64, num_filters_fpn= 128, pretrained=True):
-        super(FPNGhostNetv4, self).__init__()
+        super(FPNGhostNetA, self).__init__()
         
         self.fpn = FPN(num_filters=num_filters_fpn, norm_layer=norm_layer, pretrained=pretrained)
 
@@ -198,7 +198,7 @@ class FPN(nn.Module):
 if __name__== "__main__":
 
    
-    model= FPNGhostNetv4(nn.BatchNorm2d)
+    model= FPNGhostNetA(nn.BatchNorm2d)
     from torchstat import stat
 
     stat(model, (3, 736, 1312))
