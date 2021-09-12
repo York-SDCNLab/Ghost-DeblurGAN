@@ -55,7 +55,7 @@ For testing on the dataset utilized in this work,<br>
         <th>Link</th>
     </tr>
     <tr>
-        <td rowspan="3">GoPro Test Dataset</td>
+        <td rowspan="4">GoPro Test Dataset</td>
         <td>InceptionResNet-v2</td>
         <td>29.55/ 0.934</td>
         <td><a href="https://drive.google.com/uc?export=view&id=1UXcsRVW-6KF23_TNzxw-xC0SzaMfXOaR">fpn_inception.h5</a></td>
@@ -64,6 +64,11 @@ For testing on the dataset utilized in this work,<br>
         <td>MobileNet</td>
         <td>28.17/ 0.925</td>
         <td><a href="https://drive.google.com/uc?export=view&id=1JhnT4BBeKBBSLqTo6UsJ13HeBXevarrU">fpn_mobilenet.h5</a></td>
+    </tr>
+    <tr>
+        <td>MobileNet-DSC</td>
+        <td>28.03/ 0.922</td>
+        <td><a href=""></a></td>
     </tr>
     <tr>
         <td>MobileNet-DSC</td>
