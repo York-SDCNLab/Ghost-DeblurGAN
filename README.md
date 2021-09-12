@@ -40,7 +40,7 @@ For single image inference,
 by default output is written under submit directory
 
 Note: 'model' parameters in config.yaml must correspond to the weights <br>
-For testing on single image ,<br>
+For testing on single image,<br>
 ```python test_metrics.py --img_folder=/path/to/image.png --weights_path=/path/to/weights --new_gopro``` <br>
 For testing on the dataset utilized in this work,<br>
 ```python test_metrics.py --img_folder=/base/directory/of/GOPRO/test/blur --weights_path=/path/to/weights --new_gopro ```
@@ -63,16 +63,16 @@ For testing on the dataset utilized in this work,<br>
     <tr>
         <td>DeblurGAN-v2 GhostNet</td>
         <td>28.42/ 0.913</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilenet.h5</a></td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet.h5</a></td>
     </tr>
     <tr>
         <td>DeblurGAN-v2 MobileNetV2</td>
         <td>28.40/ 0.917</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5"></a></td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilnet_v2.h5</a></td>
     </tr>
     <tr>
         <td>DeblurGAN-v2 MobileNetV3</td>
         <td>28.05/ 0.919</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5"></a></td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilenet_v3.h5</a></td>
     </tr>
 </table>
