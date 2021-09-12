@@ -60,19 +60,19 @@ For testing on the dataset utilized in this work,<br>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
     <tr>
-        <td rowspan="4"><a href="https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view">GoPro Test Dataset</a></td>
+        
         <td>Ghost-DeblurGAN (ours)</td>
         <td>28.79/ 0.920</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
     <tr>
-        <td rowspan="4"><a href="https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view">GoPro Test Dataset</a></td>
+        
         <td>Ghost-DeblurGAN (ours)</td>
         <td>28.79/ 0.920</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
     <tr>
-        <td rowspan="4"><a href="https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view">GoPro Test Dataset</a></td>
+       
         <td>Ghost-DeblurGAN (ours)</td>
         <td>28.79/ 0.920</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
