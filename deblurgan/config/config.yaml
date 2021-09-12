@@ -1,0 +1,67 @@
+---
+project: deblur_gan
+experiment_desc: fpn
+
+train:
+  files_a: &FILES_A /home/sdcn/Downloads/GOPRO/train/blur/**/*.png #old_go_pro/train/**/blur/*.png
+  files_b: &FILES_B /home/sdcn/Downloads/GOPRO/train/sharp/**/*.png #old_go_pro/train/**/sharp/*.png
+  size: &SIZE 256
+  crop: random
+  preload: &PRELOAD false
+  preload_size: &PRELOAD_SIZE 0
+  #bounds: [0, .9]
+  scope: geometric
+  corrupt: &CORRUPT
+    - name: cutout
+      prob: 0.5
+      num_holes: 3
+      max_h_size: 25
+      max_w_size: 25
+    - name: jpeg
+      quality_lower: 70
+      quality_upper: 90
+    - name: motion_blur
+    - name: median_blur
+    - name: gamma
+    - name: rgb_shift
+    - name: hsv_shift
+    - name: sharpen
+
+val:
+  files_a: /home/sdcn/Downloads/GOPRO/test/blur/**/*.png #old_go_pro/test/**/blur/*.png
+  files_b: /home/sdcn/Downloads/GOPRO/test/sharp/**/*.png #old_go_pro/test/**/sharp/*.png
+  size: *SIZE
+  scope: geometric
+  crop: center
+  preload: *PRELOAD
+  preload_size: *PRELOAD_SIZE
+  #bounds: [.9, 1]
+  corrupt: *CORRUPT
+
+phase: train
+warmup_num: 3
+model:
+  g_name: fpn_mobilenet_v3 #options are fpn_ghostnet, fpn_ghostnet_v2, fpn_ghostnet_v3_conv2d, fpn_mobilenet, fpn_inception
+  blocks: 9
+  d_name: double_gan # may be no_gan, patch_gan, double_gan, multi_scale
+  d_layers: 3
+  content_loss: perceptual
+  adv_lambda: 0.001
+  disc_loss: ragan-ls #wgan-gp
+  learn_residual: True
+  norm_layer: instance
+  dropout: True
+
+num_epochs: 2000
+train_batches_per_epoch: 1000
+val_batches_per_epoch: 100
+batch_size: 1
+image_size: [256, 256]
+
+optimizer:
+  name: adam
+  lr:  0.0001
+scheduler:
+  name: linear
+  start_epoch: 50
+  min_lr: 0.0000001
