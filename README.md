@@ -4,9 +4,10 @@ This is an upgrade work based on DeblurGAN-v2 (https://github.com/VITA-Group/Deb
 Link to the introduction video: https://www.youtube.com/watch?v=90T88_M_l3Y  
 Link to the paper: https://arxiv.org/abs/2109.03379
 
-Visual comparison of marker detection with and without Ghost-DeblurGAN in robotic applications. (a):  Consecutive frames from a video captured by a downwards camera onboard a maneuvering UAV (Qdrone, from the Quanser Inc. https://www.quanser.com/products/qdrone/). (b): Consecutive frames from a video captured by a low-cost CSI camera onboard a moving UGV (Qcar, from the Quanser Inc. https://www.quanser.com/products/qcar/).
-![4](https://user-images.githubusercontent.com/58899542/132931220-d1d661f4-b148-4467-9ba0-a859b440caed.gif)
+Visual comparison of marker detection with and without Ghost-DeblurGAN in robotic applications. (a):  A video captured by a downwards camera onboard a maneuvering UAV (Qdrone, from the Quanser Inc. https://www.quanser.com/products/qdrone/). (b): A video captured by a low-cost CSI camera onboard a moving UGV (Qcar, from the Quanser Inc. https://www.quanser.com/products/qcar/).
 ![2](https://user-images.githubusercontent.com/58899542/132931107-2761194b-2c94-4f87-a907-57773be92a4e.gif)
+![4](https://user-images.githubusercontent.com/58899542/132931220-d1d661f4-b148-4467-9ba0-a859b440caed.gif)
+
 
 
 # YorkTag Dataset
