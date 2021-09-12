@@ -29,10 +29,10 @@ By default training script will load conifguration from config/config.yaml
 files_a parameter represents blurry images and files_b represents sharp images
 modify config.yaml file to change backbone.
 Available backbone scripts are:
-- ghostnet + HIN + GM
-- ghostnet
-- mobilenet v2
-- mobilenet v3
+- Ghostnet + HIN + GM
+- Ghostnet
+- MobilenetV2
+- MobilenetV3
 
 # Testing and Inference
 For single image inference,
@@ -54,24 +54,28 @@ For testing on the dataset utilized in this work,<br>
         <th>Link</th>
     </tr>
     <tr>
-        <td rowspan="3"><a href="https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view">GoPro Test Dataset</a></td>
+        <td rowspan="4"><a href="https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view">GoPro Test Dataset</a></td>
         <td>Ghost-DeblurGAN (ours)</td>
         <td>28.79/ 0.920</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_inception.h5</a></td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
     <tr>
-        <td>MobileNet</td>
-        <td>double_gan</td>
-        <td>ragan-ls</td>
-        <td>28.17/ 0.925</td>
-        <td><a href="https://drive.google.com/uc?export=view&id=1JhnT4BBeKBBSLqTo6UsJ13HeBXevarrU">fpn_mobilenet.h5</a></td>
+        
+        <td>DeblurGAN-v2 Ghostnet</td>
+        <td>28.42/ 0.913</td>
+        <td><a href="./trained_weights/fpn_ghostnet.h5> fpn_ghostnet.h5</a></td>
     </tr>
     <tr>
-        <td>MobileNet-DSC</td>
-        <td>double_gan</td>
-        <td>ragan-ls</td>
-        <td>28.03/ 0.922</td>
-        <td><a href=""></a></td>
+        
+        <td>DeblurGAN-v2 MobilenetV2</td>
+        <td>28.40/ 0.917</td>
+        <td><a href="./trained_weights/fpn_mobilenet_v2.h5">fpn_mobilenet_v2.h5</a></td>
+    </tr>
+    <tr>
+        
+        <td>DeblurGAN-v2 MobilenetV3</td>
+        <td>28.05/ 0.919</td>
+        <td><a href="./trained_weights/fpn_mobilenet_v3.h5">fpn_mobilenet_v3.h5</a></td>
     </tr>
 </table>
 
