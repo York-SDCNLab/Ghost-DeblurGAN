@@ -1,5 +1,0 @@
-on latest ghostnetwe changed norm layer to hinet,
-implementted pixel shuffle
-didnt do model.train()
-trained on new gopro
-changed intermediate features maps by multiplying with 1.25 (the variable fpn_filterns, num filters)

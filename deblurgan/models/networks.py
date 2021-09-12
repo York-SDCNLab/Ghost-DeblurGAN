@@ -5,18 +5,13 @@ import functools
 from torch.autograd import Variable
 import numpy as np
 from models.fpn_mobilenet import FPNMobileNet
-from models.fpn_inception import FPNInception
+
 #############################################
 from models.fpn_mobilenet_v3 import FPNMobileNetv3
-from models.fpn_ghostnet import FPNGhostNet
-from models.fpn_ghostnet_v2 import FPNGhostNetv2
-from models.fpn_ghostnet_v3 import FPNGhostNetv3, HINet
-from models.fpn_ghostnet_v4 import FPNGhostNetv4
-from models.fpn_ghostnet_v3_conv2d import FPNGhostNetv3_Conv2d
+from models.fpn_ghostnet_v4 import FPNGhostNetv4, HINet
+from models.fpn_ghostnet_v4_clear import FPNGhostNetv4C
 #############################################
-from models.fpn_inception_simple import FPNInceptionSimple
-from models.unet_seresnext import UNetSEResNext
-from models.fpn_densenet import FPNDense
+
 ###############################################################################
 # Functions
 ###############################################################################
@@ -29,7 +24,7 @@ def get_norm_layer(norm_type='instance', affine= False):
         norm_layer = functools.partial(nn.InstanceNorm2d, affine=affine, track_running_stats=True)
     elif norm_type=='hin':
         norm_layer= HINet
-        print("using hin")
+        
     else:
         raise NotImplementedError('normalization layer [%s] is not found' % norm_type)
     return norm_layer
@@ -281,34 +276,14 @@ def get_fullD(model_config):
 
 def get_generator(model_config, cuda= True):
     generator_name = model_config['g_name']
-    if generator_name == 'resnet':
-        model_g = ResnetGenerator(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']),
-                                  use_dropout=model_config['dropout'],
-                                  n_blocks=model_config['blocks'],
-                                  learn_residual=model_config['learn_residual'])
-    elif generator_name == 'fpn_mobilenet':
+    if generator_name == 'fpn_mobilenet':
         model_g = FPNMobileNet(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
     elif generator_name == 'fpn_mobilenet_v3':
         model_g = FPNMobileNetv3(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
-    elif generator_name == 'fpn_ghostnet':
-        model_g= FPNGhostNet(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
-    elif generator_name == 'fpn_ghostnet_v2':
-        model_g= FPNGhostNetv2(norm_layer= get_norm_layer(norm_type=model_config['norm_layer']))
-    elif generator_name == 'fpn_ghostnet_v3':
-        model_g = FPNGhostNetv3(norm_layer=get_norm_layer(norm_type=model_config['norm_layer'], affine= True))
-    elif generator_name == 'fpn_ghostnet_v4':
+    elif generator_name == 'fpn_ghostnet_gm_hin':
         model_g= FPNGhostNetv4(norm_layer=get_norm_layer(norm_type=model_config['norm_layer'], affine= True))
-    elif generator_name == 'fpn_ghostnet_v3_conv2d':
-        model_g = FPNGhostNetv3_Conv2d(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
-    elif generator_name == 'fpn_inception':
-        model_g = FPNInception(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
-    elif generator_name == 'fpn_inception_simple':
-        model_g = FPNInceptionSimple(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
-    elif generator_name == 'fpn_dense':
-        model_g = FPNDense()
-    elif generator_name == 'unet_seresnext':
-        model_g = UNetSEResNext(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']),
-                                pretrained=model_config['pretrained'])
+    elif generator_name == 'fpn_ghostnet':
+        model_g = FPNGhostNetv4C(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
     else:
         raise ValueError("Generator Network [%s] not recognized." % generator_name)
 
