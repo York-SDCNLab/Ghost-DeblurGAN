@@ -26,11 +26,6 @@ class FPNGhostNetv4C(nn.Module):
 
     def __init__(self, norm_layer, output_ch=3, num_filters= 64, num_filters_fpn= 128, pretrained=True):
         super(FPNGhostNetv4C, self).__init__()
-        #print("\n\n GhostNET constructed \n\n")
-
-        # Feature Pyramid Network (FPN) with four feature maps of resolutions
-        # 1/4, 1/8, 1/16, 1/32 and `num_filters` filters for all feature maps.
-
         self.fpn = FPN(num_filters=num_filters_fpn, norm_layer=norm_layer, pretrained=pretrained)
 
         # The segmentation heads on top of the FPN
@@ -129,16 +124,16 @@ class FPN(nn.Module):
     def forward(self, x):
 
         # Bottom-up pathway, from ResNet
-        #print(x.shape)
+        
         enc0 = self.enc0(x)
 
-        enc1 = self.enc1(enc0)  # 256
+        enc1 = self.enc1(enc0)  
 
-        enc2 = self.enc2(enc1)  # 512
+        enc2 = self.enc2(enc1)  
 
-        enc3 = self.enc3(enc2)  # 1024
+        enc3 = self.enc3(enc2)  
 
-        enc4 = self.enc4(enc3)  # 2048
+        enc4 = self.enc4(enc3)  
         
 
 

@@ -76,3 +76,5 @@ For testing on the dataset utilized in this work,<br>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilenet_v3.h5</a></td>
     </tr>
 </table>
+
+weights trained on the mix of gopro and yorktag coming soon

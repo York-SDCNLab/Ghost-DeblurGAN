@@ -1,8 +1,7 @@
 import torch
 import torch.nn as nn
 from models.mobilenet_v2 import MobileNetV2
-#import numpy as np
-from pthflops import count_ops
+
 
 
 class FPNHead(nn.Module):
@@ -153,80 +152,13 @@ class FPN(nn.Module):
         map1 = self.td3(lateral1 + self.upsample1(map2))#nn.functional.upsample(map2, scale_factor=2, mode="nearest"))
         return lateral0, map1, map2, map3, map4
 
-""" def main():
-    input_ = torch.unsqueeze(torch.rand([3, 256, 256]), 0)
-    fpn_ = FPN(nn.BatchNorm2d)
-    output_ = fpn_(input_)
-    for i in range(5):
-        eval(f'print(output_[{i}].shape)') 
-    fpn = FPNMobileNet(nn.BatchNorm2d)
-    output_ = fpn(input_)
-    print(output_.shape)
-    output_ = torch.squeeze(output_)
-    output_ = output_.detach().numpy()
-    print(output_.shape)
-    output_ = np.transpose(output_, [2, 1, 0])
-    print(output_.shape)
-    # cv2.imshow("img", output_)
-    # cv2.imshow("input", np.transpose(input_.squeeze().detach().numpy(), [2, 1, 0]))
-    # cv2.waitKey(0)
 
-if __name__ == "__main__":
-    import time
-    TIME_I = time.time()
-    main()
-    TIME_F = time.time()
-    print(f'time taken by mobilenet: {TIME_F - TIME_I}')"""
-def main():
-    input_ = torch.rand([2, 3, 256, 256])#torch.unsqueeze(torch.rand([3, 256, 256]), 0)
-    #fpn_ = FPN(nn.BatchNorm2d)
-    #output_ = fpn_(input_)
-    """for i in range(5):
-        eval(f'print(output_[{i}].shape)') """
-    fpn = FPNMobileNet(nn.BatchNorm2d)
-    output_ = fpn(input_)
-    #print(output_.shape)
-    #output_ = torch.squeeze(output_)
-    #output_ = output_.detach().numpy()
-    #print(output_.shape)
-    #output_ = np.transpose(output_, [0, 3, 2, 1])
-    #print(output_.shape)
-
-    #cv2.imshow("img", output_[0])
-    #cv2.imshow("input", np.transpose(input_[0].squeeze().detach().numpy(), [2, 1, 0]))
-    #cv2.waitKey(5000)
-    #cv2.imshow("img", output_)
-    #cv2.imshow("input", np.transpose(input_.squeeze().detach().numpy(), [2, 1, 0]))
-    #cv2.waitKey(0)
 
 if __name__== "__main__":
 
-    import time
-    arg = torch.rand([1, 3, 736, 1024])
-    #TIME_I= time.time()
-    #t_run, flops= main(arg, time)
-    #TIME_F= time.time()
-    #return TIME_F-TIME_I
-    model =  FPNMobileNet(nn.BatchNorm2d)
-    #count_ops(model, arg)
+    
+    model =  FPNMobileNet(nn.BatchNorm2d)    
     from torchstat import stat
-
     stat(model, (3, 736, 1312))
-    #count_ops(model, arg)
-    #from thop import profile, clever_format
-
-    #macs, params = profile(model, inputs=(arg,))
-    #macs, params = clever_format([macs, params], "%.3f")
-    """from ptflops import get_model_complexity_info
-
-    macs, params = get_model_complexity_info(model, (3, 736, 1024), as_strings=True,
-                                             print_per_layer_stat=True, verbose=True)
-    print('{:<30}  {:<8}'.format('Computational complexity: ', macs))
-    print('{:<30}  {:<8}'.format('Number of parameters: ', params))"""
-    #time, flops= main(arg, time)
-    #macs, params = profile(model, inputs=(arg,))
-    #macs, params = clever_format([macs, params], "%.3f")
-    #print(f'MACS : {macs}')
-    #print(f'PARAMS: {params}')
-
+    
 
