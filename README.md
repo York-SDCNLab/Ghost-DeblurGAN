@@ -20,3 +20,58 @@ To end this, we propose a new large-scale dataset, YorkTag, that provides paired
 Link to the YorkTag dataset utilized in our paper: https://drive.google.com/file/d/1S3wVptR_mzrntuCtEarkXHE6d1zN6jd3/view?usp=sharing
 ![yorktag](https://user-images.githubusercontent.com/58899542/132930869-a66fb452-9579-4922-980a-94bc5e067ae9.jpeg)  
 Link to the linear GoPro dataset utilized in this work:https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view
+
+
+# Training
+## Command
+```python train.py```
+By default training script will load conifguration from config/config.yaml
+files_a parameter represents blurry images and files_b represents sharp images
+modify config.yaml file to change backbone
+Available backbone scripts are:
+- ghostnet + HIN + GM
+- ghostnet
+- mobilenet v2
+- mobilenet v3
+
+# Testing and Inference
+For single image inference,
+```python predict.py /path/to/image.png --weights_path=/path/to/weights```
+by default output is written under submit directory
+
+Note: 'model' parameters in config.yaml must correspond to the weights 
+For testing on single image ,
+```python test_metrics.py --img_folder=/path/to/image.png --weights_path=/path/to/weights --new_gopro```
+For testing on the dataset utilized in this work,
+```python test_metrics.py --img_folder=/base/directory/of/GOPRO/test/blur --weights_path=/path/to/weights --new_gopro ```
+
+# Pre-trained models
+<table align="center">
+    <tr>
+        <th>Dataset</th>
+        <th>G Model</th>
+        <th>PSNR/ SSIM</th>
+        <th>Link</th>
+    </tr>
+    <tr>
+        <td rowspan="3"><a href="https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view">GoPro Test Dataset</a></td>
+        <td>Ghost-DeblurGAN (ours)</td>
+        <td>28.79/ 0.920</td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_inception.h5</a></td>
+    </tr>
+    <tr>
+        <td>MobileNet</td>
+        <td>double_gan</td>
+        <td>ragan-ls</td>
+        <td>28.17/ 0.925</td>
+        <td><a href="https://drive.google.com/uc?export=view&id=1JhnT4BBeKBBSLqTo6UsJ13HeBXevarrU">fpn_mobilenet.h5</a></td>
+    </tr>
+    <tr>
+        <td>MobileNet-DSC</td>
+        <td>double_gan</td>
+        <td>ragan-ls</td>
+        <td>28.03/ 0.922</td>
+        <td><a href=""></a></td>
+    </tr>
+</table>
+

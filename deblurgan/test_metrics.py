@@ -13,7 +13,7 @@ import tqdm
 from util.metrics import PSNR
 from albumentations import Compose, CenterCrop, PadIfNeeded
 from PIL import Image
-from ssim.ssimlib import SSIM #util.metrics import SSIM #
+from ssim.ssimlib import SSIM 
 from models.networks import get_generator
 from functools import partial
 
@@ -23,7 +23,7 @@ def get_args():
 	parser = argparse.ArgumentParser('Test an image')
 	parser.add_argument('--img_folder', required=True, help='GoPRO Folder')
 	parser.add_argument('--weights_path', required=True, help='Weights path')
-	parser.add_argument("--new_gopro", action= "store_true", help= "weather to use new go pro dir structure")
+	parser.add_argument("--new_gopro",  action= "store_true", help= "whether to use new go pro dir structure or old go pro dir structure, by default assumes old go pro dir structure, specifying this option will revert")
 
 	return parser.parse_args()
 
@@ -35,13 +35,11 @@ def prepare_dirs(path):
 
 
 def get_gt_image(path, new_gopro= False):
-	#print(path)
+	
 	dir, filename = os.path.split(path)
 	base, seq = os.path.split(dir)
 	base, _ = os.path.split(base) if new_gopro else (base, None)
-	#print(os.path.join(base, 'sharp', filename))
-	#print(os.path.join(base, 'sharp', seq, filename))
-	img = cv2.cvtColor(cv2.imread(os.path.join(base, 'sharp', seq, filename )if new_gopro else os.path.join(base, 'sharp', filename )  ), cv2.COLOR_BGR2RGB)#seq, filename)), cv2.COLOR_BGR2RGB)
+	img = cv2.cvtColor(cv2.imread(os.path.join(base, 'sharp', seq, filename )if new_gopro else os.path.join(base, 'sharp', filename )  ), cv2.COLOR_BGR2RGB)
 	return img
 
 
