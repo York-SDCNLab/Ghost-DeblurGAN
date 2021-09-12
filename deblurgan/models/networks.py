@@ -10,7 +10,7 @@ from models.fpn_mobilenet import FPNMobileNet
 from models.fpn_mobilenet_v3 import FPNMobileNetv3
 from models.fpn_ghostnet import FPNGhostNet, HINet
 from models.fpn_ghostnet_clear import FPNGhostNetC
-from models.fpn_ghostnent_all import FPNGhostNetA
+from models.fpn_ghostnet_all import FPNGhostNetA
 #############################################
 
 ###############################################################################
