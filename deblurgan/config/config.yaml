@@ -41,7 +41,7 @@ val:
 phase: train
 warmup_num: 3
 model:
-  g_name: fpn_ghostnet_gm_hin #options are fpn_ghostnet, fpn_mobilenet, fpn_mobilenet_v3
+  g_name: fpn_ghostnet_gm_hin #options are fpn_ghostnet, fpn_mobilenet, fpn_mobilenet_v3, fpn_ghostnet_all
   blocks: 9
   d_name: double_gan # no_gan, patch_gan, double_gan, multi_scale
   d_layers: 3
