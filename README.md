@@ -27,7 +27,7 @@ Link to the linear GoPro dataset utilized in this work:https://drive.google.com/
 ```python train.py```
 By default training script will load conifguration from config/config.yaml
 files_a parameter represents blurry images and files_b represents sharp images
-modify config.yaml file to change backbone
+modify config.yaml file to change backbone.
 Available backbone scripts are:
 - ghostnet + HIN + GM
 - ghostnet
@@ -36,13 +36,13 @@ Available backbone scripts are:
 
 # Testing and Inference
 For single image inference,
-```python predict.py /path/to/image.png --weights_path=/path/to/weights```
+```python predict.py /path/to/image.png --weights_path=/path/to/weights``` <br>
 by default output is written under submit directory
 
-Note: 'model' parameters in config.yaml must correspond to the weights 
-For testing on single image ,
-```python test_metrics.py --img_folder=/path/to/image.png --weights_path=/path/to/weights --new_gopro```
-For testing on the dataset utilized in this work,
+Note: 'model' parameters in config.yaml must correspond to the weights <br>
+For testing on single image ,<br>
+```python test_metrics.py --img_folder=/path/to/image.png --weights_path=/path/to/weights --new_gopro``` <br>
+For testing on the dataset utilized in this work,<br>
 ```python test_metrics.py --img_folder=/base/directory/of/GOPRO/test/blur --weights_path=/path/to/weights --new_gopro ```
 
 # Pre-trained models
