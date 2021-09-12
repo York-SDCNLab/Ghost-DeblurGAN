@@ -63,7 +63,7 @@ For testing on the dataset utilized in this work,<br>
         
         <td>DeblurGAN-v2 Ghostnet</td>
         <td>28.42/ 0.913</td>
-        <td><a href="./trained_weights/fpn_ghostnet.h5> fpn_ghostnet.h5</a></td>
+        <td><a href="./trained_weights/fpn_ghostnet.h5">fpn_ghostnet.h5</a></td>
     </tr>
     <tr>
         
