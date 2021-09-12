@@ -46,6 +46,7 @@ For testing on the dataset utilized in this work,<br>
 ```python test_metrics.py --img_folder=/base/directory/of/GOPRO/test/blur --weights_path=/path/to/weights --new_gopro ```
 
 # Pre-trained models
+
 <table align="center">
     <tr>
         <th>Dataset</th>
@@ -54,30 +55,19 @@ For testing on the dataset utilized in this work,<br>
         <th>Link</th>
     </tr>
     <tr>
-        <td rowspan="4"><a href="https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view">GoPro Test Dataset</a></td>
-        <td>Ghost-DeblurGAN (ours)</td>
-        <td>28.79/ 0.920</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
+        <td rowspan="3">GoPro Test Dataset</td>
+        <td>InceptionResNet-v2</td>
+        <td>29.55/ 0.934</td>
+        <td><a href="https://drive.google.com/uc?export=view&id=1UXcsRVW-6KF23_TNzxw-xC0SzaMfXOaR">fpn_inception.h5</a></td>
     </tr>
     <tr>
-        
-        <td>Ghost-DeblurGAN (ours)</td>
-        <td>28.79/ 0.920</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
+        <td>MobileNet</td>
+        <td>28.17/ 0.925</td>
+        <td><a href="https://drive.google.com/uc?export=view&id=1JhnT4BBeKBBSLqTo6UsJ13HeBXevarrU">fpn_mobilenet.h5</a></td>
     </tr>
     <tr>
-        
-        <td>Ghost-DeblurGAN (ours)</td>
-        <td>28.79/ 0.920</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
+        <td>MobileNet-DSC</td>
+        <td>28.03/ 0.922</td>
+        <td><a href=""></a></td>
     </tr>
-    <tr>
-        
-        <td>Ghost-DeblurGAN (ours)</td>
-        <td>28.79/ 0.920</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
-    </tr>
-    
-    
 </table>
-
