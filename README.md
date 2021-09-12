@@ -64,19 +64,19 @@ For testing on the dataset utilized in this work,<br>
         
         <td>DeblurGAN-v2 Ghostnet</td>
         <td>28.42/ 0.913</td>
-        <td><a href="./trained_weights/fpn_ghostnet.h5">fpn_ghostnet.h5</a></td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet.h5</a></td>
     </tr>
     <tr>
         
         <td>DeblurGAN-v2 MobilenetV2</td>
         <td>28.40/ 0.917</td>
-        <td><a href="./trained_weights/fpn_mobilenet_v2.h5">fpn_mobilenet_v2.h5</a></td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilenet_v2.h5</a></td>
     </tr>
     <tr>
         
         <td>DeblurGAN-v2 MobilenetV3</td>
         <td>28.05/ 0.919</td>
-        <td><a href="./trained_weights/fpn_mobilenet_v3.h5">fpn_mobilenet_v3.h5</a></td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilenet_v3.h5</a></td>
     </tr>
 </table>
 
