@@ -284,7 +284,7 @@ def get_generator(model_config, cuda= True):
     elif generator_name == 'fpn_ghostnet_gm_hin':
         model_g= FPNGhostNet(norm_layer=get_norm_layer(norm_type=model_config['norm_layer'], affine= True))
     elif generator_name == 'fpn_ghostnet_clear':
-        model_g = FPNGhostNetC(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
+        model_g = FPNGhostNetC(norm_layer=get_norm_layer(norm_type=model_config['norm_layer'], affine= True))
     elif generator_name == 'fpn_ghostnet_all':
         model_g = FPNGhostNetA(norm_layer=get_norm_layer(norm_type=model_config['norm_layer']))
     else:
