@@ -58,7 +58,7 @@ Link to the linear GoPro dataset utilized in this work: https://drive.google.com
     <tr>
         <td rowspan="3">GoPro Test Dataset</td>
         <td>Ghost-DeblurGAN (ours)</td>
-        <td>28.75/ 0.920</td>
+        <td>28.79/ 0.920</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
     <tr>
