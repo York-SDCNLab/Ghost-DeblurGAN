@@ -62,7 +62,7 @@ Link to the linear GoPro dataset utilized in this work: https://drive.google.com
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
     <tr>
-        <td>DeblurGAN-v2 MobileNetV2</td>
+        <td>DeblurGAN-v2 (MobileNetV2)</td>
         <td>28.40/ 0.917</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilnet_v2.h5</a></td>
     </tr>
