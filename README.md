@@ -27,7 +27,7 @@ Link to the YorkTag dataset utilized in our paper: https://drive.google.com/file
 ```python train.py```
 By default training script will load conifguration from config/config.yaml
 files_a parameter represents blurry images and files_b represents sharp images
-modify config.yaml file to change backbone.
+modify config.yaml file to change the generator model.
 Available model scripts are:
 - Ghostnet + Half Instance Normalization (HIN) + Ghost module (GM)
 - MobilenetV2
