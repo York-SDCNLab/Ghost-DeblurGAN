@@ -16,7 +16,7 @@ Current deblurring benchmarks only contain routine scenes including pedestrians,
 ![github1](https://user-images.githubusercontent.com/58899542/132930466-46acdd1d-fed4-4c69-9506-4dc84107bbaa.png)
 
 
-To end this, we propose a new large-scale dataset, YorkTag, that provides paired blurred and sharp images containing AprilTags and ArUcos. For the sake of obtaining ideal sharp images, we employ the iPhone 12 with the DJI OM 4 stabilizer to capture high-resolution videos. Detailed introduction of the blurred and sharp image pairs generation is available in our paper. Our training set consists of 1577 image pairs, and test set consists of 497 image pairs totalling 2074 blurry-sharp image pairs. We will keep augmenting the yorktag dataset later on.   
+To end this, we propose a new large-scale dataset, **YorkTag**, that provides paired blurred and sharp images containing AprilTags and ArUcos. For the sake of obtaining ideal sharp images, we employ the iPhone 12 with the DJI OM 4 stabilizer to capture high-resolution videos. Detailed introduction of the blurred and sharp image pairs generation is available in our paper. Our training set consists of 1577 image pairs, and test set consists of 497 image pairs totalling 2074 blurry-sharp image pairs. We will keep augmenting the yorktag dataset later on.   
 Link to the YorkTag dataset utilized in our paper: https://drive.google.com/file/d/1S3wVptR_mzrntuCtEarkXHE6d1zN6jd3/view?usp=sharing
 ![yorktag](https://user-images.githubusercontent.com/58899542/132930869-a66fb452-9579-4922-980a-94bc5e067ae9.jpeg)  
 
