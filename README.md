@@ -50,19 +50,22 @@ For testing on the dataset utilized in this work,<br>
     <tr>
         <th>Dataset</th>
         <th>Model</th>
+        <th>FLOPs</th>
         <th>PSNR/ SSIM</th>
         <th>Link</th>
     </tr>
     <tr>
-        <td rowspan="2">GoPro Test Dataset</td>
-        <td>Ghost-DeblurGAN (Ours)</td>
-        <td>28.79/ 0.920</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
+        <td rowspan="2">GoPro Test Dataset</td>     
+        <td>DeblurGAN-v2 (MobileNetV2)</td>
+        <td>43.75G</td>
+        <td>28.40/ 0.917</td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilnet_v2.h5</a></td>        
     </tr>
     <tr>
-        <td>DeblurGAN-v2 (MobileNetV2)</td>
-        <td>28.40/ 0.917</td>
-        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilnet_v2.h5</a></td>
+        <td>Ghost-DeblurGAN (Ours)</td>
+        <td>20.51G</td>
+        <td>28.79/ 0.920</td>
+        <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
    
 </table>
