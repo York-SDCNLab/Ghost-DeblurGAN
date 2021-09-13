@@ -30,7 +30,6 @@ files_a parameter represents blurry images and files_b represents sharp images
 modify config.yaml file to change backbone.
 Available model scripts are:
 - Ghostnet + Half Instance Normalization (HIN) + Ghost module (GM)
-- Ghostnet
 - MobilenetV2
 
 
