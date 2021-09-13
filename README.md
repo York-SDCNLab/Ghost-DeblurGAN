@@ -49,7 +49,7 @@ For testing on the dataset utilized in this work,<br>
 # Pre-trained models
 For fair comparison we used the same mobilenet model as the original DeblurGANv2 (https://github.com/VITA-Group/DeblurGANv2) and 
 trained all models from **scratch** on the GOPRO dataset (https://drive.google.com/file/d/1KStHiZn5TNm2mo3OLZLjnRvd0vVFCI0W/view).
-The metrics in the above table are for the purpose to illustrate the superiority of Ghost-DeblurGAN over the original deblurGAN-v2 (mobilenetV2). Note that to obtain the deblurring performance shown in the visual comparison, the weights trained on the mix of YorkTag and GoPro should be adopted. These weights are coming soon.
+The metrics in the above table are to illustrate the superiority of Ghost-DeblurGAN over the original deblurGAN-v2 (mobilenetV2). Note that to obtain the deblurring performance shown in the visual comparison, the weights trained on the mix of YorkTag and GoPro should be adopted. These weights are coming soon.
 <table align="center">
     <tr>
         <th>Dataset</th>
