@@ -54,7 +54,7 @@ For testing on the dataset utilized in this work,<br>
     </tr>
     <tr>
         <td rowspan="2">GoPro Test Dataset</td>
-        <td>Ghost-DeblurGAN (ours)</td>
+        <td>**Ghost-DeblurGAN (ours)**</td>
         <td>28.79/ 0.920</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
     </tr>
