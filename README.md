@@ -68,5 +68,5 @@ Link to the linear GoPro dataset utilized in this work: https://drive.google.com
     </tr>
    
 </table>
-
-The weights in the above table are just to illustrate the superiority of Ghost-DeblurGAN over the original deblurGAN-v2 (mobilenetV2). Note that to obtain the deblurring performance shown in the visual comparison, the weights trained on the mix of YorkTag and GoPro should be adopted. These weights are coming soon.
+For fair comparison we used the same mobilenet model as the original DeblurGANv2 and trained all models from scratch on the GOPRO dataset.
+The metrics in the above table illustrate the superiority of Ghost-DeblurGAN over the original deblurGAN-v2 (mobilenetV2). Note that to obtain the deblurring performance shown in the visual comparison, the weights trained on the mix of YorkTag and GoPro should be adopted. These weights are coming soon.
