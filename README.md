@@ -55,7 +55,7 @@ For testing on the dataset utilized in this work,<br>
         <th>Link</th>
     </tr>
     <tr>
-        <td rowspan="5">GoPro Test Dataset</td>
+        <td rowspan="3">GoPro Test Dataset</td>
         <td>Ghost-DeblurGAN (ours)</td>
         <td>28.79/ 0.920</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_ghostnet_gm_hin.h5</a></td>
@@ -70,16 +70,7 @@ For testing on the dataset utilized in this work,<br>
         <td>28.40/ 0.917</td>
         <td><a href="./trained_weights/fpn_ghostnet_gm_hin.h5">fpn_mobilnet_v2.h5</a></td>
     </tr>
-    <tr>
-        <td>DeblurGAN-v2 MobileNetV3</td>
-        <td>28.05/ 0.919</td>
-        <td><a href="./trained_weights/fpn_mobilenet_v3.h5">fpn_mobilenet_v3.h5</a></td>
-    </tr>
-    <tr>
-        <td>Ghost-DeblurGAN (all)</td>
-        <td>28.60/ 0.915</td>
-        <td><a href="./trained_weights/fpn_ghostnet_all.h5">fpn_ghostnet_all.h5</a></td>
-    </tr>
+   
 </table>
 
 weights trained on the mix of gopro and yorktag coming soon
