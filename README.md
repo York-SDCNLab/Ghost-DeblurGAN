@@ -74,3 +74,15 @@ The metrics in the above table are to illustrate the superiority of Ghost-Deblur
    
 </table>
 
+# Citation
+If you find this work helpful for your research, please cite our paper:
+```
+@misc{liu2021ghostdeblurgan,
+      title={Ghost-DeblurGAN and Its Application to Fiducial Marker System}, 
+      author={Yibo Liu and Amaldev Haridevan and Hunter Schofield and Jinjun Shan},
+      year={2021},
+      eprint={2109.03379},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV}
+}
+```
