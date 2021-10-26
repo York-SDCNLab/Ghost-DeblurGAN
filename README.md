@@ -25,7 +25,7 @@ Link to the YorkTag dataset utilized in our paper: https://drive.google.com/file
 
 # Training
 ## Command
-```python train.py```
+```python train.py``` A video tutorial is available at: https://www.youtube.com/watch?v=JSCA2x3NBHs <br>
 By default training script will load conifguration from config/config.yaml
 files_a parameter represents blurry images and files_b represents sharp images
 modify config.yaml file to change the generator model.
