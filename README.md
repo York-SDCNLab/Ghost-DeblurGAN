@@ -2,7 +2,6 @@
 Motion blur can impede marker detection and marker-based pose estimation, which is common in real-world robotic applications involving fiducial markers. To solve this problem, we propose a novel lightweight generative adversarial network (GAN), Ghost-DeblurGAN, for real-time motion deblurring. Furthermore, a new large-scale dataset, YorkTag, provides pairs of sharp/blurred images containing fiducial markers and is proposed to train and qualitatively and quantitatively evaluate our model. Experimental results demonstrate that when applied along with fudicual marker systems to motion-blurred images, Ghost-DeblurGAN improves the marker detection significantly and mitigates the rotational ambiguity problem in marker-based pose estimation.   
 This is an upgrade work based on DeblurGAN-v2 (https://github.com/VITA-Group/DeblurGANv2).  
 Link to the introduction video: https://www.youtube.com/watch?v=90T88_M_l3Y  
-Link to the paper: https://arxiv.org/abs/2109.03379
 
 Visual comparison of marker detection with and without Ghost-DeblurGAN in robotic applications. (a):  A video captured by a downwards camera onboard a maneuvering UAV (Qdrone, from the Quanser Inc. https://www.quanser.com/products/qdrone/). (b): A video captured by a low-cost CSI camera onboard a moving UGV (Qcar, from the Quanser Inc. https://www.quanser.com/products/qcar/).
 <img src="https://user-images.githubusercontent.com/58899542/132931107-2761194b-2c94-4f87-a907-57773be92a4e.gif" width="800">
