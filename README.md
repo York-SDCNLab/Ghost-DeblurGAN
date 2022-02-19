@@ -3,9 +3,12 @@ Motion blur can impede marker detection and marker-based pose estimation, which 
 Link to the introduction video: https://www.youtube.com/watch?v=uYHIDIJQ0r8 <br>
 The implementation is modified from https://github.com/VITA-Group/DeblurGANv2.<br> 
 
-Visual comparison of marker detection with and without Ghost-DeblurGAN in robotic applications. (a):  A video captured by a downwards camera onboard a maneuvering UAV (Qdrone, from the Quanser Inc. https://www.quanser.com/products/qdrone/). (b): A video captured by a low-cost CSI camera onboard a moving UGV (Qcar, from the Quanser Inc. https://www.quanser.com/products/qcar/).
-<img src="https://user-images.githubusercontent.com/58899542/132931107-2761194b-2c94-4f87-a907-57773be92a4e.gif" width="800">
-<img src="https://user-images.githubusercontent.com/58899542/132931220-d1d661f4-b148-4467-9ba0-a859b440caed.gif" width="800">
+# Visual Comparison
+Visual comparison of marker detection with and without Ghost-DeblurGAN in robotic applications. <br>
+(a):  A video captured by a downwards camera onboard a maneuvering UAV (Qdrone, from the Quanser Inc. https://www.quanser.com/products/qdrone/). <br>
+<img src="https://user-images.githubusercontent.com/58899542/154817276-ac136431-a69b-4630-af15-5496cb7124d1.gif" width="800"> <br>
+(b): A video captured by a low-cost CSI camera onboard a moving UGV (Qcar, from the Quanser Inc. https://www.quanser.com/products/qcar/).<br>
+<img src="https://user-images.githubusercontent.com/58899542/154817295-22e733a5-5f33-439d-a29e-08f5950a8784.gif" width="800"> <br>
 
 
 
