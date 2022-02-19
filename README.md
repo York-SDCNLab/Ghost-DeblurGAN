@@ -5,16 +5,16 @@ The implementation is modified from https://github.com/VITA-Group/DeblurGANv2.<b
 
 # Visual Comparison
 Visual comparison of marker detection with and without Ghost-DeblurGAN in robotic applications. <br>
-(a):  A video captured by a downwards camera onboard a maneuvering UAV (Qdrone, from the Quanser Inc. https://www.quanser.com/products/qdrone/). <br>
+A video captured by a downwards camera onboard a maneuvering UAV ([Qdrone](https://www.quanser.com/products/qdrone/), from the Quanser Inc. )<br>
 <img src="https://user-images.githubusercontent.com/58899542/154817276-ac136431-a69b-4630-af15-5496cb7124d1.gif" width="800"> <br>
-(b): A video captured by a low-cost CSI camera onboard a moving UGV (Qcar, from the Quanser Inc. https://www.quanser.com/products/qcar/).<br>
+A video captured by a low-cost CSI camera onboard a moving UGV ([Qcar](https://www.quanser.com/products/qcar/), from the Quanser Inc.) <br>
 <img src="https://user-images.githubusercontent.com/58899542/154817295-22e733a5-5f33-439d-a29e-08f5950a8784.gif" width="800"> <br>
 
 
 
 # YorkTag Dataset
 
-Current deblurring benchmarks only contain routine scenes including pedestrians, cars, buildings, and human faces, etc. To illustrate the necessity of proposing a new deblurring benchmark containing fiducial markers, we test HINet (https://github.com/megvii-model/HINet) which has the SOTA performance on GoPro dataset with a blurred image and apply the Apriltag Detector  to the deblurred image (See Fig.1(d)). As shown in the figure, due to the fact that HINet is trained on GoPro dataset which contains no fiducial markers, the marker detection rate is far from satisfying.
+Current deblurring benchmarks only contain routine scenes including pedestrians, cars, buildings, and human faces, etc. To illustrate the necessity of proposing a new deblurring benchmark containing fiducial markers, we test [HINet](https://github.com/megvii-model/HINet) which has the SOTA performance on GoPro dataset with a blurred image and apply the Apriltag Detector  to the deblurred image (See Fig.1(d)). As shown in the figure, due to the fact that HINet is trained on GoPro dataset which contains no fiducial markers, the marker detection rate is far from satisfying.
 
 <img src="https://user-images.githubusercontent.com/58899542/132930466-46acdd1d-fed4-4c69-9506-4dc84107bbaa.png" width="600">
 
