@@ -79,7 +79,7 @@ The metrics in the above table are to illustrate the superiority of Ghost-Deblur
 </table>
 
 # Citation
-If you find this work helpful for your research, please cite our paper:
+If you find this work helpful for your research, please cite our [paper](https://arxiv.org/abs/2109.03379#:~:text=With%20the%20proposed%20model%20trained,improves%20the%20marker%20detection%20significantly):
 ```
 @misc{liu2021ghostdeblurgan,
       title={Application of Ghost-DeblurGAN to Fiducial Marker Detection}, 
