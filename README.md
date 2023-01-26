@@ -81,14 +81,15 @@ The metrics in the above table are to illustrate the superiority of Ghost-Deblur
 </table>
 
 # Citation
-If you find this work helpful for your research, please cite our [paper](https://arxiv.org/abs/2109.03379#:~:text=With%20the%20proposed%20model%20trained,improves%20the%20marker%20detection%20significantly):
+If you find this work helpful for your research, please cite our paper:
 ```
-@misc{liu2021ghostdeblurgan,
-      title={Application of Ghost-DeblurGAN to Fiducial Marker Detection}, 
-      author={Yibo Liu and Amaldev Haridevan and Hunter Schofield and Jinjun Shan},
-      year={2021},
-      eprint={2109.03379},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV}
-}
+@INPROCEEDINGS{9981701,
+  author={Liu, Yibo and Haridevan, Amaldev and Schofield, Hunter and Shan, Jinjun},
+  booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Application of Ghost-DeblurGAN to Fiducial Marker Detection}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={6827-6832},
+  doi={10.1109/IROS47612.2022.9981701}}
 ```
