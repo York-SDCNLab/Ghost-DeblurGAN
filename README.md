@@ -1,4 +1,6 @@
 # Ghost-DeblurGAN
+
+This is the repository of our IROS 2022 paper  [Application of Ghost-DeblurGAN to Fiducial Marker Detection](https://ieeexplore.ieee.org/document/9981701) <br>
 An introduction video is available at https://www.youtube.com/watch?v=uYHIDIJQ0r8 <br>
 
 Feature extraction or localization based on the fiducial marker could fail due to motion blur in real-world robotic applications. To solve this problem, a lightweight generative  adversarial network, named Ghost-DeblurGAN, for real-time motion deblurring is developed. Furthermore, on account that there is no existing deblurring benchmark for such task, a new large-scale dataset, YorkTag, is proposed that provides pairs of sharp/blurred images containing fiducial markers. With the proposed model trained and tested on YorkTag, it is demonstrated that when applied along with fiducial marker systems to motion-blurred images, Ghost-DeblurGAN improves the marker detection significantly.
