@@ -1,5 +1,7 @@
 # Ghost-DeblurGAN [IROS 2022]
 
+![35_graph](https://github.com/York-SDCNLab/Ghost-DeblurGAN/assets/58899542/94ed927f-9528-4da6-bef5-9bec5c3a255d)
+
 This is the repository of our IROS 2022 paper  [Application of Ghost-DeblurGAN to Fiducial Marker Detection](https://ieeexplore.ieee.org/document/9981701) <br>
 An introduction video is available at https://www.bilibili.com/video/BV1r14y1Y7M3/?spm_id_from=333.999.0.0 <br>
 
